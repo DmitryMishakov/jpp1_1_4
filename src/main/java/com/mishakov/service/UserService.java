@@ -14,6 +14,8 @@ public interface UserService {
     void removeUserById(long id);
 
     List<User> getAllUsers();
+    
+    void printUsers(List<User> userList);
 
     void cleanUsersTable();
 }
