@@ -8,7 +8,7 @@ import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
-    UserDao userDao = new UserDaoJDBCImpl();
+    private UserDao userDao = new UserDaoJDBCImpl();
 
     public void createUsersTable() {
         userDao.createUsersTable();
@@ -28,6 +28,10 @@ public class UserServiceImpl implements UserService {
 
     public List<User> getAllUsers() {
         return userDao.getAllUsers();
+    }
+    
+    public void printUsers(List<User> userList) {
+        userList.forEach(x -> Util.getUtilLogger().log(Level.INFO, x.toString()));
     }
 
     public void cleanUsersTable() {
