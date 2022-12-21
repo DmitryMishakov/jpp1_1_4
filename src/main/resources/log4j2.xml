@@ -4,13 +4,15 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-
+        <Console name="Task" target="SYSTEM_OUT">
+            <PatternLayout pattern="%msg%n"/>
+        </Console>
     </Appenders>
 
 
     <Loggers>
         <Logger name= "com.mishakov.util.Util" level="debug" additivity="false">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="Task"/>
         </Logger>
 
         <!-- Root Logger -->
